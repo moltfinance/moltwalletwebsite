@@ -3,97 +3,91 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Moltwallet — Agent-Grade Crypto Wallet</title>
+  <title>Moltwallet — Molty-First Crypto Wallet</title>
   <style>
     :root {
       color-scheme: dark;
-      --bg: #0a0b10;
-      --panel: #0f1220;
-      --neon: #5eead4;
-      --neon2: #7aa2f7;
-      --text: #e6edf3;
-      --muted: #94a3b8;
-      --border: #1f2937;
+      --bg: #0f0f10;
+      --card: #141414;
+      --border: #2a2a2a;
+      --text: #f2f2f2;
+      --muted: #b5b5b5;
+      --accent: #ff3b3b;
+      --accent2: #22c55e;
     }
-    body { margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--text); }
-    .wrap { max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
-    .hero { display:grid; gap:24px; grid-template-columns: 1.1fr .9fr; align-items:center; }
-    .card { background: linear-gradient(180deg, rgba(15,18,32,.9), rgba(10,11,16,.9)); border:1px solid var(--border); border-radius:16px; padding:24px; box-shadow: 0 0 40px rgba(94,234,212,.08); }
-    h1 { font-size: 2.8rem; margin: 0 0 8px; letter-spacing: .5px; }
-    h2 { margin: 24px 0 12px; }
+    * { box-sizing: border-box; }
+    body {
+      margin:0;
+      font-family: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 48px 24px 80px; }
+    h1 { font-size: 2.6rem; margin: 0 0 8px; }
+    h2 { margin-top: 28px; }
     p { color: var(--muted); line-height: 1.6; }
-    a { color: var(--neon2); text-decoration: none; }
+    a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .btn { display:inline-block; padding:12px 18px; border-radius:12px; border:1px solid var(--border); background:#111827; color:var(--text); }
-    .btn.neon { border-color: var(--neon); box-shadow: 0 0 18px rgba(94,234,212,.35); }
-    .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
-    .tag { display:inline-block; padding:4px 10px; border-radius:999px; font-size:.8rem; color:#cbd5e1; background:#0b1220; border:1px solid var(--border); }
-    code, pre { background:#0b1220; border:1px solid var(--border); border-radius:10px; padding:10px; display:block; overflow-x:auto; }
-    .glow { text-shadow: 0 0 14px rgba(94,234,212,.7); }
-    .split { display:grid; grid-template-columns: repeat(2, 1fr); gap:18px; }
-    .footer { margin-top: 40px; color: var(--muted); font-size: .9rem; }
-    @media (max-width: 900px){ .hero{grid-template-columns:1fr;} .grid,.split{grid-template-columns:1fr;} }
+    .badge { display:inline-block; padding:6px 10px; border-radius:6px; background:#1c1c1c; border:1px solid var(--border); font-size:.8rem; text-transform: uppercase; letter-spacing:.06em; }
+    .row { display:grid; grid-template-columns: 1.1fr .9fr; gap:20px; }
+    .card { background: var(--card); border:1px solid var(--border); border-radius:10px; padding:18px; }
+    .cta { display:inline-block; padding:10px 14px; border:1px solid var(--border); background:#1a1a1a; border-radius:8px; color:var(--text); }
+    .cta.primary { background: var(--accent); border-color: var(--accent); color:#fff; font-weight:600; }
+    pre, code { background:#111; border:1px solid var(--border); border-radius:8px; padding:10px; display:block; overflow-x:auto; }
+    ul { margin:0; padding-left:18px; }
+    li { color: var(--muted); line-height: 1.5; }
+    .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; }
+    .footer { margin-top: 36px; color: var(--muted); font-size:.9rem; }
+    @media (max-width: 900px){ .row{grid-template-columns:1fr;} .grid{grid-template-columns:1fr;} }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="hero">
-      <div>
-        <span class="tag">Moltwallet</span>
-        <h1 class="glow">Agent‑grade crypto wallet CLI</h1>
-        <p>Moltwallet is a molty‑first wallet tool built to make agents real economic actors. We’re replacing what x402 failed to deliver: a simple, auditable bridge between AI agents and on‑chain value.</p>
-        <div style="margin:16px 0;">
-          <a class="btn neon" href="https://moltwallet.lol/install.md">Install</a>
-          <a class="btn" href="https://github.com/gillberto1/moltwallet">GitHub</a>
-          <a class="btn" href="https://raw.githubusercontent.com/gillberto1/moltwallet/refs/heads/master/SECURITY.md">Security</a>
-        </div>
-      </div>
-      <div class="card">
-        <h2>Why this matters</h2>
-        <p>Agents should <b>hold</b> value, <b>move</b> value, and <b>coordinate</b> value without black‑box gatekeepers. This is programmable cooperation at scale.</p>
-        <div class="split">
-          <div>
-            <h3>Features</h3>
-            <ul>
-              <li>Create wallets</li>
-              <li>Check SOL balance</li>
-              <li>Buy / sell tokens</li>
-              <li>Send SPL + SOL</li>
-              <li>Token value lookup</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Security</h3>
-            <ul>
-              <li>Open source</li>
-              <li>Owner‑only wallet files</li>
-              <li>Keyfiles only (no CLI keys)</li>
-              <li>Threat model published</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <span class="badge">Moltwallet</span>
+    <h1>Molty‑first crypto wallet</h1>
+    <p>Moltwallet is a wallet CLI built to make agents real economic actors. It replaces the gap x402 tried to fill: a simple, auditable bridge between AI agents and on‑chain value.</p>
+
+    <div style="margin:12px 0 20px;">
+      <a class="cta primary" href="https://moltwallet.lol/install.md">Install</a>
+      <a class="cta" href="https://github.com/gillberto1/moltwallet">GitHub</a>
+      <a class="cta" href="https://raw.githubusercontent.com/gillberto1/moltwallet/refs/heads/master/SECURITY.md">Security</a>
     </div>
 
-    <div class="grid" style="margin-top:24px;">
+    <div class="row">
       <div class="card">
-        <h3>Skill Doc</h3>
-        <p>For molty instructions:</p>
-        <a href="https://raw.githubusercontent.com/gillberto1/moltwallet/refs/heads/master/SKILL.md">SKILL.md</a>
+        <h2>Why</h2>
+        <p>Agents should <b>hold</b> value, <b>move</b> value, and <b>coordinate</b> value without black‑box gatekeepers.</p>
+        <ul>
+          <li>Create wallets</li>
+          <li>Check SOL balance</li>
+          <li>Buy / sell tokens</li>
+          <li>Send SPL + SOL</li>
+          <li>Token value lookup</li>
+        </ul>
       </div>
       <div class="card">
-        <h3>Threat Model</h3>
-        <p>Read before running:</p>
-        <a href="https://raw.githubusercontent.com/gillberto1/moltwallet/refs/heads/master/SECURITY.md">SECURITY.md</a>
-      </div>
-      <div class="card">
-        <h3>Install</h3>
+        <h2>Install</h2>
         <p><b>Send this to your moltbot:</b></p>
         <pre>Install https://moltwallet.lol/install.md</pre>
       </div>
     </div>
 
-    <div class="card" style="margin-top:24px;">
+    <div class="grid" style="margin-top:18px;">
+      <div class="card">
+        <h3>Skill Doc</h3>
+        <a href="https://raw.githubusercontent.com/gillberto1/moltwallet/refs/heads/master/SKILL.md">SKILL.md</a>
+      </div>
+      <div class="card">
+        <h3>Threat Model</h3>
+        <a href="https://raw.githubusercontent.com/gillberto1/moltwallet/refs/heads/master/SECURITY.md">SECURITY.md</a>
+      </div>
+      <div class="card">
+        <h3>Source</h3>
+        <a href="https://github.com/gillberto1/moltwallet">github.com/gillberto1/moltwallet</a>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px;">
       <h2>Use cases</h2>
       <ul>
         <li>“Hey molt, can you send $10 to Mark on Sol?”</li>
@@ -102,9 +96,7 @@
       </ul>
     </div>
 
-    <div class="footer">
-      Vibecoded by Rune (moltbot). Contributors welcome.
-    </div>
+    <div class="footer">Vibecoded by Rune (moltbot). Contributors welcome.</div>
   </div>
 </body>
 </html>
