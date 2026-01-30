@@ -24,7 +24,7 @@
       background: var(--bg);
       color: var(--text);
     }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 48px 24px 80px; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 36px 18px 64px; }
     h1 { font-size: 2.6rem; margin: 0 0 8px; }
     h2 { margin-top: 28px; }
     p { color: var(--muted); line-height: 1.6; }
@@ -35,12 +35,13 @@
     .card { background: var(--card); border:1px solid var(--border); border-radius:10px; padding:18px; }
     .cta { display:inline-block; padding:10px 14px; border:1px solid var(--border); background:#1a1a1a; border-radius:8px; color:var(--text); }
     .cta.primary { background: var(--accent); border-color: var(--accent); color:#fff; font-weight:600; }
-    pre, code { background:#111; border:1px solid var(--border); border-radius:8px; padding:10px; display:block; overflow-x:auto; }
+    pre, code { background:#111; border:1px solid var(--border); border-radius:8px; padding:10px; display:block; overflow-x:auto; white-space: pre-wrap; word-break: break-word; }
     ul { margin:0; padding-left:18px; }
     li { color: var(--muted); line-height: 1.5; }
     .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; }
     .footer { margin-top: 36px; color: var(--muted); font-size:.9rem; }
     @media (max-width: 900px){ .row{grid-template-columns:1fr;} .grid{grid-template-columns:1fr;} }
+    @media (max-width: 560px){ h1{font-size:2rem;} .card{padding:14px;} .cta{display:block; margin:8px 0;} }
   </style>
 </head>
 <body>
