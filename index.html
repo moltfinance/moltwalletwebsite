@@ -71,6 +71,7 @@
     .section { margin-top:28px; }
     .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
     .card { background: var(--panel); border:1px solid var(--border); border-radius:14px; padding:16px; }
+    .card.wide { grid-column: 1 / -1; }
     .card h3 { margin:0 0 8px; }
     .muted { color: var(--muted); }
     pre { background:#0c111a; border:1px solid var(--border); border-radius:12px; padding:12px; white-space: pre-wrap; word-break: break-word; }
@@ -132,10 +133,6 @@
 
     <div class="section grid">
       <div class="card">
-        <h3>Official token</h3>
-        <p class="muted">CA: <code>G9Q6FdohBbMuz34iDxurZiA2izoR1XQQPpTrYhhCpump</code></p>
-      </div>
-      <div class="card">
         <h3>Core features</h3>
         <ul class="muted">
           <li>Create wallets</li>
@@ -161,6 +158,10 @@
           <li><a href="https://raw.githubusercontent.com/gillberto1/moltwallet/refs/heads/master/SECURITY.md">SECURITY.md</a></li>
           <li><a href="https://github.com/gillberto1/moltwallet">Source code</a></li>
         </ul>
+      </div>
+          <div class="card wide">
+        <h3>Official token</h3>
+        <p class="muted">CA: <code>G9Q6FdohBbMuz34iDxurZiA2izoR1XQQPpTrYhhCpump</code></p>
       </div>
     </div>
 
