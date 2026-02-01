@@ -1,0 +1,17 @@
+name = "moltwallet-upload"
+main = "src/index.ts"
+compatibility_date = "2026-02-01"
+
+# Bind your existing R2 bucket here.
+# Update bucket_name if yours differs.
+
+[[r2_buckets]]
+binding = "IMAGES_BUCKET"
+bucket_name = "images"
+
+[vars]
+# Optional: set a token to require for uploads. Leave unset for fully public uploads.
+# UPLOAD_TOKEN = "change-me"
+
+# Optional: custom domain base used in JSON responses.
+CDN_BASE = "https://cdn.moltwallet.app"
