@@ -6,7 +6,7 @@ compatibility_date = "2026-02-01"
 # Update bucket_name if yours differs.
 
 [[r2_buckets]]
-binding = "IMAGES_BUCKET"
+binding = "IMG"
 bucket_name = "images"
 
 [vars]

@@ -1,5 +1,6 @@
 export interface Env {
-  IMAGES_BUCKET: R2Bucket;
+  // Cloudflare dashboard binding name (as configured in the Worker UI)
+  IMG: R2Bucket;
   UPLOAD_TOKEN?: string;
   CDN_BASE?: string;
 }
@@ -104,7 +105,7 @@ export default {
       // Create-only by default
       const overwrite = url.searchParams.get('overwrite') === '1';
       if (!overwrite) {
-        const existing = await env.IMAGES_BUCKET.head(key);
+        const existing = await env.IMG.head(key);
         if (existing) {
           return badRequest('Object already exists (use ?overwrite=1 to overwrite)', 409);
         }
@@ -113,7 +114,7 @@ export default {
       const body = req.body;
       if (!body) return badRequest('Missing request body', 400);
 
-      const res = await env.IMAGES_BUCKET.put(key, body, {
+      const res = await env.IMG.put(key, body, {
         httpMetadata: {
           contentType,
           cacheControl: key.toLowerCase().endsWith('.json')
